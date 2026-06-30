@@ -1,0 +1,320 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a; /* Premium dark almost black */
+  --accent: #000000;
+  --accent-foreground: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --background: #18181b; /* Zinc 900: premium dark gray, not pitch black */
+  --foreground: #f4f4f5; /* Zinc 100: light foreground text/elements */
+  --accent: #ffffff;
+  --accent-foreground: #09090b;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tab navigation active indicator animation */
+.tab-indicator {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth accordion expand/collapse */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content.expanded {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+/* Score dot indicators */
+.score-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: background-color 0.15s ease;
+}
+
+.score-dot.filled {
+  background-color: var(--foreground);
+}
+
+.score-dot.empty {
+  background-color: color-mix(in srgb, var(--foreground) 12%, transparent);
+}
+
+/* Priority badge colors (unified to monochrome/neutral for premium look) */
+.priority-high {
+  background-color: color-mix(in srgb, var(--foreground) 8%, transparent);
+  color: var(--foreground);
+  border: 1px solid color-mix(in srgb, var(--foreground) 15%, transparent);
+}
+
+.priority-medium {
+  background-color: color-mix(in srgb, var(--foreground) 4%, transparent);
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+.priority-low {
+  background-color: color-mix(in srgb, var(--foreground) 2%, transparent);
+  color: color-mix(in srgb, var(--foreground) 50%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 4%, transparent);
+}
+
+/* Replay card win/loss left accent - clean greyscale */
+.replay-win {
+  border-left: 2px solid var(--foreground);
+}
+
+.replay-loss {
+  border-left: 2px solid color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+/* Subtle card hover lift for premium feel */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px var(--shadow-color), 
+              0 4px 8px -4px var(--shadow-color);
+  border-color: color-mix(in srgb, var(--foreground) 12%, transparent);
+}
+
+/* Premium smooth shadow */
+.shadow-premium {
+  box-shadow: 0 4px 20px -4px var(--shadow-color);
+}
+
+/* Diff viewer line styles */
+.diff-line {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 22px;
+  white-space: pre;
+  min-height: 22px;
+}
+
+.diff-added {
+  background-color: color-mix(in srgb, #22c55e 5%, var(--background));
+}
+
+.diff-removed {
+  background-color: color-mix(in srgb, var(--foreground) 3%, transparent);
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.diff-gutter {
+  color: color-mix(in srgb, var(--foreground) 20%, transparent);
+  user-select: none;
+  text-align: right;
+  padding: 0 8px 0 4px;
+  min-width: 32px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 22px;
+  vertical-align: top;
+}
+
+.diff-separator {
+  background-color: color-mix(in srgb, var(--foreground) 2%, transparent);
+  border-top: 1px dashed color-mix(in srgb, var(--foreground) 8%, transparent);
+  border-bottom: 1px dashed color-mix(in srgb, var(--foreground) 8%, transparent);
+  color: color-mix(in srgb, var(--foreground) 35%, transparent);
+  font-size: 11px;
+  padding: 3px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-align: center;
+}
+
+.diff-separator:hover {
+  background-color: color-mix(in srgb, var(--foreground) 4%, transparent);
+}
+
+/* ═══ Landing Page Design System ═══ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes graphBreathe {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.055; }
+}
+
+@keyframes routePulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.08; }
+}
+
+@keyframes subtleDrift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(1px, -2px); }
+  66% { transform: translate(-1px, 1px); }
+}
+
+.landing-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.landing-fade-in-delay-1 {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.landing-fade-in-delay-2 {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.landing-fade-in-delay-3 {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.landing-fade-in-delay-4 {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+/* System module card hover */
+.system-module {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.system-module:hover {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6),
+              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Section divider line */
+.section-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  margin: 0;
+}
+
+/* Dot grid background pattern */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Landing page button styles */
+.btn-primary-landing {
+  background: #111111;
+  color: #ffffff;
+  border-radius: 0px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px 24px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border: 1px solid #111111;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.btn-primary-landing:hover {
+  opacity: 0.9;
+}
+
+.btn-primary-landing svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-primary-landing:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.btn-hero-primary {
+  background: #111111;
+  color: #ffffff;
+  border-radius: 0px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px 26px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border: 1px solid #111111;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-hero-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-hero-primary svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-hero-primary:hover svg {
+  transform: translate(2.5px, -2.5px);
+}
+
+.btn-secondary-landing {
+  background: transparent;
+  color: #111111;
+  border-radius: 0px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px 24px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.btn-secondary-landing:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
