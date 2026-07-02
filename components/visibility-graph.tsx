@@ -33,6 +33,8 @@ export function VisibilityGraph({
     resize();
     window.addEventListener("resize", resize);
 
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = {
@@ -45,8 +47,11 @@ export function VisibilityGraph({
       mouseRef.current = { x: -1000, y: -1000 };
     };
 
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseleave", handleMouseLeave);
+    // Only attach mouse listeners on pointer devices (desktop)
+    if (!isTouch) {
+      canvas.addEventListener("mousemove", handleMouseMove);
+      canvas.addEventListener("mouseleave", handleMouseLeave);
+    }
 
     const draw = (time: number) => {
       const w = canvas.getBoundingClientRect().width;
@@ -61,10 +66,10 @@ export function VisibilityGraph({
       const mouse = mouseRef.current;
       const isMobile = w < 768;
 
-      // Draw Interactive Spotlight Matrix Reveal (Only drawn near cursor to prevent clutter)
-      if (variant === "hero" && mouse.x > 0 && mouse.y > 0) {
-        const spotRadius = isMobile ? 100 : 150;
-        const cellSize = isMobile ? 36 : 28;
+      // Draw Interactive Spotlight Matrix Reveal — desktop pointer devices only
+      if (!isTouch && !isMobile && variant === "hero" && mouse.x > 0 && mouse.y > 0) {
+        const spotRadius = 150;
+        const cellSize = 28;
         const cols = Math.ceil(w / cellSize);
         const rows = Math.ceil(h / cellSize);
 
@@ -100,8 +105,10 @@ export function VisibilityGraph({
     return () => {
       cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", resize);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      if (!isTouch) {
+        canvas.removeEventListener("mousemove", handleMouseMove);
+        canvas.removeEventListener("mouseleave", handleMouseLeave);
+      }
     };
   }, [variant]);
 
