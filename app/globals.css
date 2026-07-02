@@ -192,13 +192,19 @@ body {
   animation: dash 0.8s linear infinite;
 }
 
-/* Integrations diagram: scale-to-fit without horizontal scroll, centered */
+/* Integrations diagram: scale-to-fit without horizontal scroll, centered. Hidden on mobile, flex on desktop */
 .scale-diagram-wrapper {
   container-type: inline-size;
   overflow: hidden;
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .scale-diagram-wrapper {
+    display: flex;
+  }
 }
 
 .scale-diagram {
@@ -213,6 +219,7 @@ body {
     height: calc(380px * (100cqw / 1180px));
   }
 }
+
 
 
 @keyframes subtleDrift {

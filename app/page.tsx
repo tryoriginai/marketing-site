@@ -434,12 +434,15 @@ export default function Home() {
         </div>
 
         {/* Integrations Network Diagram */}
-        <div className="relative z-10 border border-black/[0.05] bg-white/50 backdrop-blur-md p-8 md:p-10 overflow-hidden" style={{ borderRadius: '0px' }}>
+        <div 
+          className="relative z-10 border border-black/[0.05] bg-white/50 backdrop-blur-md p-8 md:p-10 overflow-hidden" 
+          style={{ borderRadius: '0px', containerType: 'inline-size' }}
+        >
           {/* Subtle Background Dot Grid */}
           <div className="absolute inset-0 dot-grid-light opacity-50 pointer-events-none" />
           
           {/* Desktop View: Curved Branching Diagram — lg+ only, no horizontal scroll */}
-          <div className="hidden lg:block scale-diagram-wrapper">
+          <div className="scale-diagram-wrapper">
             <div
               style={{ width: '1180px' }}
               className="relative h-[380px] scale-diagram"
@@ -626,12 +629,12 @@ export default function Home() {
           </div>
 
           {/* Mobile/Tablet View fallback (Grid list) — shown below lg */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 lg:hidden">
             {[
-              { surface: 'cursor' as const, label: 'Cursor' },
+              { surface: 'cursor' as const, label: 'Cursor Agent' },
               { surface: 'claude' as const, label: 'Claude Code' },
-              { surface: 'chatgpt' as const, label: 'ChatGPT' },
-              { surface: 'perplexity' as const, label: 'Perplexity' },
+              { surface: 'chatgpt' as const, label: 'ChatGPT Search' },
+              { surface: 'perplexity' as const, label: 'Perplexity AI' },
               { surface: 'gemini' as const, label: 'Gemini Pro' },
             ].map((agent, i) => (
               <div key={i} className="p-4 border border-black/[0.05] bg-white flex items-center gap-3">
@@ -641,7 +644,7 @@ export default function Home() {
             ))}
             <div className="p-4 border border-dashed border-black/15 bg-white flex items-center gap-3">
               <span className="text-[12px] font-bold text-black/45">+</span>
-              <span className="text-[11px] font-semibold font-mono text-black/50">More</span>
+              <span className="text-[11px] font-semibold font-mono text-black/50">More engines</span>
             </div>
           </div>
         </div>

@@ -384,7 +384,7 @@ export function ExplainerMockup() {
             className="h-5 px-3 bg-black/[0.01] text-[9px] text-black/35 flex items-center gap-1.5 font-mono border border-black/[0.02]"
           >
             <span className="w-1 h-1 rounded-full bg-black/20" />
-            <span>origin discoverability engine // active_simulation_loop</span>
+            <span>origin <span className="hidden sm:inline">discoverability engine // active_simulation_loop</span></span>
           </div>
           <div className="flex items-center gap-2 text-[9px] text-black/40 font-mono">
             <span>Autoplay</span>
@@ -659,7 +659,7 @@ export function ExplainerMockup() {
                           <div className="flex items-center gap-2.5">
                             <BrandIcon brand="competitor" size={16} />
                             <span className="text-black/50 font-sans">Your Competitor</span>
-                            <span className="text-[8px] font-mono font-bold uppercase tracking-wider text-black/40 bg-black/5 border border-black/10 px-1.5 py-0.5 rounded-none ml-2">Primary Listing</span>
+                            <span className="hidden sm:inline-block text-[8px] font-mono font-bold uppercase tracking-wider text-black/40 bg-black/5 border border-black/10 px-1.5 py-0.5 rounded-none ml-2">Primary Listing</span>
                           </div>
                           <span className="text-black/50 font-mono font-bold">85% Share</span>
                         </div>
