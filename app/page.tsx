@@ -602,10 +602,14 @@ export default function Home() {
                 </span>
                 <span className="text-[8.5px] font-semibold font-mono text-black/60 mt-2 uppercase flex items-center gap-1.5 justify-center">
                   <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path fill="#36C5F0" d="M5.04 15.17a2.52 2.52 0 1 1-2.52 2.52h2.52v-2.52zM6.3 15.17a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52H8.82a2.52 2.52 0 0 1-2.52-2.52v-5.04z" />
-                    <path fill="#2EB67D" d="M8.82 5.04a2.52 2.52 0 1 1-2.52-2.52v2.52h2.52zM8.82 6.3a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52H3.78a2.52 2.52 0 0 1-2.52-2.52V8.82a2.52 2.52 0 0 1 2.52-2.52h5.04z" />
-                    <path fill="#ECB22E" d="M18.96 8.82a2.52 2.52 0 1 1 2.52-2.52h-2.52v-2.52zM17.7 8.82a2.52 2.52 0 0 1-2.52 2.52h-5.04a2.52 2.52 0 0 1-2.52-2.52V3.78a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04z" />
-                    <path fill="#E01E5A" d="M15.16 18.96a2.52 2.52 0 1 1 2.52 2.52h-2.52v-2.52zM15.16 17.7a2.52 2.52 0 0 1-2.52-2.52v-5.04a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52h-5.04z" />
+                    <circle cx="3.6" cy="3.6" r="1.8" fill="#36C5F0" />
+                    <rect x="1.8" y="7.2" width="3.6" height="8.4" rx="1.8" fill="#36C5F0" />
+                    <circle cx="20.4" cy="3.6" r="1.8" fill="#2EB67D" />
+                    <rect x="8.4" y="1.8" width="8.4" height="3.6" rx="1.8" fill="#2EB67D" />
+                    <circle cx="20.4" cy="20.4" r="1.8" fill="#ECB22E" />
+                    <rect x="18.6" y="8.4" width="3.6" height="8.4" rx="1.8" fill="#ECB22E" />
+                    <circle cx="3.6" cy="20.4" r="1.8" fill="#E01E5A" />
+                    <rect x="7.2" y="18.6" width="8.4" height="3.6" rx="1.8" fill="#E01E5A" />
                   </svg>
                   <span>Slack Alert</span>
                 </span>
