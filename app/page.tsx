@@ -675,7 +675,7 @@ export default function Home() {
             Developers find products directly inside AI tools. If your documentation is missing or outdated, models will recommend a competitor instead.
           </p>
           <div className="pt-2 lg:pt-0">
-            <CtaButton size="md">Get started</CtaButton>
+            <CtaButton size="md">Book a demo</CtaButton>
           </div>
         </div>
 
