@@ -8,6 +8,7 @@ import { SignalArchitecture } from "@/components/signal-architecture";
 import { CtaButton } from "@/components/cta-button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SurfaceIcon } from "@/components/surface-icon";
+import { FaSlack } from "react-icons/fa6";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -596,21 +597,9 @@ export default function Home() {
                   boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.01), 0 2px 8px rgba(255, 77, 79, 0.04)'
                 }}
               >
+                <FaSlack className="w-5 h-5 text-[#e01e5a] mb-2" />
                 <span className="text-[9px] font-bold font-sans text-[#ff4d4f] tracking-[0.06em] uppercase leading-tight">
                   Found Visibility Gap
-                </span>
-                <span className="text-[8.5px] font-semibold font-mono text-black/60 mt-2.5 uppercase flex items-center gap-1.5 justify-center">
-                  <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <path d="M5.04 15.17a2.52 2.52 0 1 0-2.52 2.52h2.52v-2.52z" fill="#36C5F0"/>
-                    <path d="M6.3 15.17a2.52 2.52 0 0 0 2.52 2.52h5.04a2.52 2.52 0 0 0 2.52-2.52v-5.04a2.52 2.52 0 0 0-2.52-2.52H8.82a2.52 2.52 0 0 0-2.52 2.52v5.04z" fill="#36C5F0"/>
-                    <path d="M8.82 5.04a2.52 2.52 0 1 0 2.52-2.52v2.52H8.82z" fill="#2EB67D"/>
-                    <path d="M8.82 6.3a2.52 2.52 0 0 0-2.52 2.52v5.04a2.52 2.52 0 0 0 2.52 2.52h5.04a2.52 2.52 0 0 0 2.52-2.52V8.82a2.52 2.52 0 0 0-2.52-2.52H8.82z" fill="#2EB67D"/>
-                    <path d="M18.96 8.82a2.52 2.52 0 1 0 2.52-2.52h-2.52v2.52z" fill="#ECB22E"/>
-                    <path d="M17.7 8.82a2.52 2.52 0 0 0-2.52-2.52h-5.04a2.52 2.52 0 0 0-2.52 2.52v5.04a2.52 2.52 0 0 0 2.52 2.52h5.04a2.52 2.52 0 0 0 2.52-2.52V8.82z" fill="#ECB22E"/>
-                    <path d="M15.16 18.96a2.52 2.52 0 1 0-2.52 2.52v-2.52h2.52z" fill="#E01E5A"/>
-                    <path d="M15.16 17.7a2.52 2.52 0 0 0 2.52-2.52v-5.04a2.52 2.52 0 0 0-2.52-2.52h-5.04a2.52 2.52 0 0 0-2.52 2.52v5.04a2.52 2.52 0 0 0 2.52 2.52h5.04z" fill="#E01E5A"/>
-                  </svg>
-                  <span>Slack Alert</span>
                 </span>
               </div>
 
