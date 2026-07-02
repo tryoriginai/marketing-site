@@ -206,7 +206,7 @@ export default function Home() {
               className="landing-fade-in-delay-1 text-[13px] sm:text-[16px] md:text-[18px] max-w-[580px] leading-relaxed font-sans mb-10 px-4 sm:px-0"
               style={{ color: 'rgba(0,0,0,0.50)', fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}
             >
-              Measure how coding agents and LLMs recommend your product, then automatically ship documentation fixes to win recommendation share.
+              Measure how coding agents and LLMs recommend your product, then automatically ship fixes to win recommendation share.
             </p>
 
             {/* CTA */}
