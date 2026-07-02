@@ -600,9 +600,7 @@ export default function Home() {
                 <span className="text-[9px] font-bold font-sans text-[#ff4d4f] tracking-[0.06em] uppercase leading-tight">
                   Found Visibility Gap
                 </span>
-                <span className="text-[8px] font-mono text-black/45 mt-1.5 uppercase">
-                  Checking docs...
-                </span>
+
               </div>
 
               {/* Fixed gap by opening PR box */}
