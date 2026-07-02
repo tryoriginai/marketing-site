@@ -184,6 +184,14 @@ body {
   50% { opacity: 0.08; }
 }
 
+@keyframes dash {
+  to { stroke-dashoffset: -16; }
+}
+
+.animate-dash-flow {
+  animation: dash 0.8s linear infinite;
+}
+
 @keyframes subtleDrift {
   0%, 100% { transform: translate(0, 0); }
   33% { transform: translate(1px, -2px); }

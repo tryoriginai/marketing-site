@@ -20,8 +20,11 @@ const schibstedGrotesk = Schibsted_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Origin - AI Discoverability OS",
+  title: "Origin - AI Discoverability",
   description: "Become the default tool recommended by AI assistants.",
+  icons: {
+    icon: "/logo-black.svg",
+  },
 };
 
 export default function RootLayout({

@@ -1,21 +1,29 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ExplainerMockup } from "@/components/explainer-mockup";
 import { VisibilityGraph } from "@/components/visibility-graph";
 import { SignalArchitecture } from "@/components/signal-architecture";
 import { CtaButton } from "@/components/cta-button";
 import { FaqAccordion } from "@/components/faq-accordion";
-import { SmoothScroll } from "@/components/smooth-scroll";
 import { SurfaceIcon } from "@/components/surface-icon";
 
 export default function Home() {
-return (
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % 6);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
     <div
       className="min-h-screen flex flex-col relative overflow-x-hidden"
       style={{ background: '#F5F5F4', color: '#0a0a0a' }}
     >
-      <SmoothScroll />
       <style dangerouslySetInnerHTML={{ __html: `
         html, body {
           background-color: #F5F5F4 !important;
@@ -30,7 +38,7 @@ return (
           position: absolute;
           bottom: 0;
           width: 1px;
-          background: rgba(0,0,0,0.035);
+          background: rgba(0,0,0,0.02);
         }
         .hero-col-fill {
           position: absolute;
@@ -75,6 +83,21 @@ return (
           -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
           pointer-events: none;
           z-index: 0;
+        }
+        @keyframes dashFlow {
+          to {
+            stroke-dashoffset: -40;
+          }
+        }
+        .animate-dash-flow {
+          animation: dashFlow 1.2s linear infinite !important;
+        }
+        .animate-dash-flow-slow {
+          animation: dashFlow 2.4s linear infinite !important;
+        }
+        .dot-grid-light {
+          background-image: radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px);
+          background-size: 20px 20px;
         }
       `}} />
 
@@ -135,7 +158,7 @@ return (
       </header>
 
       <main className="hero-outer-container flex-1 flex flex-col relative z-10">
-        <div className="relative flex flex-col items-center justify-center text-center" style={{ minHeight: '82vh', paddingTop: '40px', paddingBottom: '160px' }}>
+        <div className="relative flex flex-col items-center justify-center text-center" style={{ minHeight: '82vh', paddingTop: '90px', paddingBottom: '160px' }}>
 
           {/* Grid column background */}
           <div className="hero-grid-bg">
@@ -146,37 +169,45 @@ return (
             <div className="hero-col-line" style={{ left: '68%', height: '100%' }} />
             <div className="hero-col-line" style={{ left: '85%', height: '100%' }} />
 
-            {/* Column 1 (0% to 17%) - open top-border line at 38% */}
-            <div className="hero-col-fill hero-col-fill-odd hero-border-t" style={{ left: '0%', width: '17%', top: '38%', bottom: '0' }} />
-            {/* Column 2 (17% to 34%) - closed rectangle from 28% to 78% */}
-            <div className="hero-col-fill hero-col-fill-even hero-border-t hero-border-b" style={{ left: '17%', width: '17%', top: '28%', bottom: '22%' }} />
-            {/* Column 3 (34% to 50%) - open top-border line at 50% */}
-            <div className="hero-col-fill hero-col-fill-odd hero-border-t" style={{ left: '34%', width: '17%', top: '50%', bottom: '0' }} />
-            {/* Column 4 (50% to 68%) - closed rectangle from 33% to 63% */}
-            <div className="hero-col-fill hero-col-fill-even hero-border-t hero-border-b" style={{ left: '51%', width: '17%', top: '33%', bottom: '37%' }} />
-            {/* Column 5 (68% to 85%) - open top-border line at 25% */}
-            <div className="hero-col-fill hero-col-fill-odd hero-border-t" style={{ left: '68%', width: '17%', top: '25%', bottom: '0' }} />
-            {/* Column 6 (85% to 100%) - open top-border line at 38% */}
-            <div className="hero-col-fill hero-col-fill-even hero-border-t" style={{ left: '85%', width: '15%', top: '38%', bottom: '0' }} />
+            {/* Column 1 (0% to 17%) - closed rectangle from 48% to 85% */}
+            <div className="hero-col-fill hero-col-fill-odd hero-border-t hero-border-b" style={{ left: '0%', width: '17%', top: '48%', bottom: '15%' }} />
+            {/* Column 2 (17% to 34%) - closed rectangle brought up to 32% */}
+            <div className="hero-col-fill hero-col-fill-even hero-border-t hero-border-b" style={{ left: '17%', width: '17%', top: '32%', bottom: '20%' }} />
+            {/* Column 3 (34% to 50%) - closed rectangle shifted up to 40% */}
+            <div className="hero-col-fill hero-col-fill-odd hero-border-t hero-border-b" style={{ left: '34%', width: '17%', top: '40%', bottom: '25%' }} />
+            {/* Column 4 (50% to 68%) - closed rectangle shifted further down to 60% */}
+            <div className="hero-col-fill hero-col-fill-even hero-border-t hero-border-b" style={{ left: '51%', width: '17%', top: '60%', bottom: '10%' }} />
+            {/* Column 5 (68% to 85%) - closed rectangle from 25% to 70% */}
+            <div className="hero-col-fill hero-col-fill-odd hero-border-t hero-border-b" style={{ left: '68%', width: '17%', top: '25%', bottom: '30%' }} />
+            {/* Column 6 (85% to 100%) - closed rectangle from 38% to 88% */}
+            <div className="hero-col-fill hero-col-fill-even hero-border-t hero-border-b" style={{ left: '85%', width: '15%', top: '38%', bottom: '12%' }} />
           </div>
 
           {/* Hero Content */}
           <div className="relative z-10 flex flex-col items-center" style={{ maxWidth: '780px', margin: '0 auto', padding: '0 24px' }}>
             {/* Hero Headline */}
             <h1
-              className="landing-fade-in text-[30px] sm:text-[36px] md:text-[48px] lg:text-[62px]"
+              className="landing-fade-in text-[24px] sm:text-[36px] md:text-[48px] lg:text-[62px]"
               style={{
                 fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif',
                 fontWeight: 400,
                 lineHeight: 1.12,
                 letterSpacing: '-0.05em',
                 color: '#0a0a0a',
-                marginBottom: '52px',
+                marginBottom: '24px',
               }}
             >
-              <span className="block whitespace-normal md:whitespace-nowrap">Become the default tool for</span>
-              <span className="block whitespace-normal md:whitespace-nowrap">coding agents &amp; LLMs</span>
+              <span className="block whitespace-normal md:whitespace-nowrap">Win the AI Recommendation.</span>
+              <span className="block whitespace-normal md:whitespace-nowrap">Ship the fix, not a report.</span>
             </h1>
+
+            {/* Supporting Copy */}
+            <p
+              className="landing-fade-in-delay-1 text-[13px] sm:text-[16px] md:text-[18px] max-w-[580px] leading-relaxed font-sans mb-10 px-4 sm:px-0"
+              style={{ color: 'rgba(0,0,0,0.50)', fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}
+            >
+              Measure how coding agents and LLMs recommend your product, then automatically ship documentation fixes to win recommendation share.
+            </p>
 
             {/* CTA */}
             <div className="landing-fade-in-delay-1">
@@ -209,23 +240,25 @@ return (
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
               <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
               <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
-                System Modules
+                Visibility engine
               </span>
             </div>
             <h2
               className="text-3xl sm:text-[42px] font-normal tracking-[-0.025em] leading-[1.1]"
               style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
             >
-              AI discoverability engine.
+              Track AI recommendations.
             </h2>
           </div>
           <p
             className="text-[15px] max-w-xs leading-relaxed font-sans"
             style={{ color: 'rgba(0,0,0,0.50)' }}
           >
-            Everything you need to secure your recommendation share inside modern AI tools.
+            Monitor how often coding agents recommend your product and pinpoint exactly where you lose developers.
           </p>
         </div>
+
+
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Module SURFACE-01 */}
@@ -264,10 +297,10 @@ return (
                   className="text-[16px] font-semibold transition-colors duration-300 text-black/85 group-hover:text-black" 
                   style={{ fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}
                 >
-                  Prompt Probing
+                  Developer queries
                 </h3>
                 <p className="text-[13px] leading-relaxed font-sans text-black/45 group-hover:text-black/60 transition-colors duration-300">
-                  Continuous simulation of developer questions in Cursor, Claude Code, and ChatGPT Search.
+                  Analyze the exact prompts developers write when searching for tools like yours in coding assistants.
                 </p>
               </div>
             </div>
@@ -317,10 +350,10 @@ return (
                   className="text-[16px] font-semibold transition-colors duration-300 text-black/85 group-hover:text-black" 
                   style={{ fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}
                 >
-                  Ecosystem Mapping
+                  Competitive gaps
                 </h3>
                 <p className="text-[13px] leading-relaxed font-sans text-black/45 group-hover:text-black/60 transition-colors duration-300">
-                  Crawl registries, packages, and registry directories to track where AI discovers your brand.
+                  Track where coding models index your competitors and identify exactly why they win recommendations.
                 </p>
               </div>
             </div>
@@ -367,10 +400,10 @@ return (
                   className="text-[16px] font-semibold transition-colors duration-300 text-black/85 group-hover:text-black" 
                   style={{ fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}
                 >
-                  Auto PR Engine
+                  Automated fixes
                 </h3>
                 <p className="text-[13px] leading-relaxed font-sans text-black/45 group-hover:text-black/60 transition-colors duration-300">
-                  Receive automated documentation and llms.txt pull requests to optimize registry indexing.
+                  Receive pull requests that optimize your documentation and files to win model recommendations.
                 </p>
               </div>
             </div>
@@ -383,53 +416,285 @@ return (
         </div>
       </section>
 
+      {/* ═══ Compatible Surfaces — Node network ═══ */}
+      <section className="relative max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 space-y-12 overflow-hidden">
+        <div className="space-y-4">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
+            <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
+            <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
+              Integrations
+            </span>
+          </div>
+          <h2
+            className="text-3xl sm:text-[42px] font-normal tracking-[-0.025em] leading-[1.1]"
+            style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
+          >
+            Compatible with coding agents and LLMs.
+          </h2>
+        </div>
+
+        {/* Integrations Network Diagram */}
+        <div className="relative z-10 border border-black/[0.05] bg-white/50 backdrop-blur-md p-8 md:p-10 overflow-hidden" style={{ borderRadius: '0px' }}>
+          {/* Subtle Background Dot Grid */}
+          <div className="absolute inset-0 dot-grid-light opacity-50 pointer-events-none" />
+          
+          {/* Desktop View: Curved Branching Diagram */}
+          <div className="hidden md:block overflow-x-auto relative">
+            <div className="relative w-[1180px] h-[380px] mx-auto">
+              
+              {/* Radial glow cores */}
+              <div 
+                className="absolute w-64 h-64 rounded-full bg-[#e8662a]/[0.025] blur-3xl pointer-events-none"
+                style={{ left: '230px', top: '168px', transform: 'translate(-25%, -25%)' }}
+              />
+              <div 
+                className="absolute w-40 h-40 rounded-full bg-black/[0.015] blur-2xl pointer-events-none"
+                style={{ left: '40px', top: '168px', transform: 'translate(-25%, -25%)' }}
+              />
+
+              {/* Status & Flow Labels */}
+              {/* Above the first connector line */}
+              <div 
+                className="absolute text-center pointer-events-none z-10"
+                style={{ left: '84px', top: '150px', width: '146px' }}
+              >
+                <span className="text-[8px] font-bold font-mono tracking-[0.08em] text-black/45 uppercase">
+                  SOURCE CODE
+                </span>
+              </div>
+              {/* Below the first connector line */}
+              <div 
+                className="absolute text-center pointer-events-none z-10"
+                style={{ left: '84px', top: '210px', width: '146px' }}
+              >
+                <span className="text-[8px] font-bold font-mono tracking-[0.06em] text-black/40 uppercase">
+                  AUTO-SYNC
+                </span>
+              </div>
+
+              {/* SVG Connector Lines */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1180 380" fill="none">
+                {/* Your Tool (You) to Origin */}
+                <path d="M 84 190 L 230 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeDasharray="3 3" />
+                
+                {/* Origin to Agent Nodes (Curved Paths) */}
+                {/* Left curves span exactly 206px: from X=274 (Origin right edge) to X=480 (Agents stack left edge) */}
+                {[
+                  { y: 40 },
+                  { y: 100 },
+                  { y: 160 },
+                  { y: 220 },
+                  { y: 280 },
+                  { y: 340 }
+                ].map((node, i) => (
+                  <path 
+                    key={i}
+                    d={`M 274 190 Q 377 ${node.y} 480 ${node.y}`} 
+                    stroke={activeIndex === i ? "#e8662a" : "rgba(0,0,0,0.15)"} 
+                    strokeWidth={activeIndex === i ? "2" : "1.2"} 
+                    strokeDasharray={activeIndex === i ? "5 5" : "4 4"} 
+                    className={activeIndex === i ? "animate-dash-flow" : "animate-dash-flow-slow"}
+                    style={{ transition: 'stroke 0.3s ease, stroke-width 0.3s ease' }}
+                  />
+                ))}
+
+                {/* Converging from Agent text area to "Found visibility gap" Box */}
+                {/* Right curves span exactly 206px: average starting X=634 to X=840 (Detector box left edge) */}
+                <path d="M 625 40 Q 732 40 840 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" strokeDasharray="4 4" className="animate-dash-flow-slow" />
+                <path d="M 618 100 Q 729 100 840 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" strokeDasharray="4 4" className="animate-dash-flow-slow" />
+                <path d="M 638 160 Q 739 160 840 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" strokeDasharray="4 4" className="animate-dash-flow-slow" />
+                <path d="M 631 220 Q 735 220 840 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" strokeDasharray="4 4" className="animate-dash-flow-slow" />
+                <path d="M 611 280 Q 725 280 840 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" strokeDasharray="4 4" className="animate-dash-flow-slow" />
+                <path d="M 625 340 Q 732 340 840 190" stroke="rgba(0,0,0,0.15)" strokeWidth="1.2" strokeDasharray="4 4" className="animate-dash-flow-slow" />
+
+                {/* Found gap to Fixed gap */}
+                <path 
+                  d="M 970 190 L 1010 190" 
+                  stroke="rgba(0,0,0,0.15)" 
+                  strokeWidth="1.2" 
+                  strokeDasharray="4 4" 
+                  className="animate-dash-flow-slow" 
+                />
+              </svg>
+
+              {/* HTML Nodes */}
+              {/* YOU Circle */}
+              <div 
+                className="absolute w-11 h-11 rounded-full bg-white border-2 border-[#e8662a] flex items-center justify-center shadow-sm z-10 text-center"
+                style={{ left: '40px', top: '168px' }}
+              >
+                <span className="text-[8.5px] font-bold font-mono text-[#e8662a]">YOU</span>
+              </div>
+
+              {/* ORIGIN Circle */}
+              <div 
+                className="absolute w-11 h-11 rounded-full bg-white border border-black flex items-center justify-center shadow-sm z-10"
+                style={{ left: '230px', top: '168px' }}
+              >
+                <img
+                  src="/logo.svg"
+                  alt="Origin Logo"
+                  className="w-6 h-6 object-contain"
+                  style={{ filter: 'invert(1)' }}
+                />
+              </div>
+
+              {/* Agent Node Stack */}
+              {[
+                { surface: 'cursor' as const, label: 'CURSOR AGENT', top: '18px' },
+                { surface: 'claude' as const, label: 'CLAUDE CODE', top: '78px' },
+                { surface: 'chatgpt' as const, label: 'CHATGPT SEARCH', top: '138px' },
+                { surface: 'perplexity' as const, label: 'PERPLEXITY AI', top: '198px' },
+                { surface: 'gemini' as const, label: 'GEMINI PRO', top: '258px' },
+              ].map((agent, i) => (
+                <div 
+                  key={i} 
+                  className="absolute flex items-center gap-3 z-10"
+                  style={{ left: '480px', top: agent.top }}
+                >
+                  <div className={`w-11 h-11 rounded-full bg-white border flex items-center justify-center shadow-sm shrink-0 transition-all duration-300 ${
+                    activeIndex === i 
+                      ? 'border-[#e8662a]/60 shadow-[#e8662a]/5 scale-[1.03]' 
+                      : 'border-black/[0.08]'
+                  }`}>
+                    <SurfaceIcon surface={agent.surface} className={`w-4 h-4 transition-colors duration-300 ${activeIndex === i ? 'text-[#e8662a]' : 'text-black/70'}`} />
+                  </div>
+                  <span className={`text-[11px] font-bold font-mono tracking-wide transition-colors duration-300 leading-none -translate-y-[1px] ${activeIndex === i ? 'text-[#e8662a]' : 'text-black/75'}`}>
+                    {agent.label}
+                  </span>
+                </div>
+              ))}
+
+              {/* MORE ENGINES Node */}
+              <div 
+                className="absolute flex items-center gap-3 z-10"
+                style={{ left: '480px', top: '318px' }}
+              >
+                <div className={`w-11 h-11 rounded-full bg-white border border-dashed flex items-center justify-center shadow-sm shrink-0 transition-all duration-300 ${
+                  activeIndex === 5 
+                    ? 'border-[#e8662a]/60 shadow-[#e8662a]/5 scale-[1.03]' 
+                    : 'border-black/20'
+                }`}>
+                  <span className={`text-[13px] font-bold transition-colors duration-300 ${activeIndex === 5 ? 'text-[#e8662a]' : 'text-black/55'}`}>+</span>
+                </div>
+                <span className={`text-[11px] font-bold font-mono tracking-wide transition-colors duration-300 leading-none -translate-y-[1px] ${activeIndex === 5 ? 'text-[#e8662a]' : 'text-black/60'}`}>MORE ENGINES</span>
+              </div>
+
+              {/* Found visibility gap detector box */}
+              <div 
+                className="absolute flex flex-col items-center justify-center p-3 bg-white border border-[#ff4d4f]/35 shadow-sm text-center z-10 transition-all duration-300"
+                style={{ 
+                  left: '840px', 
+                  top: '150px', 
+                  width: '130px', 
+                  height: '80px',
+                  boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.01), 0 2px 8px rgba(255, 77, 79, 0.04)'
+                }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-[#ff4d4f] animate-pulse mb-2" />
+                <span className="text-[9px] font-bold font-sans text-[#ff4d4f] tracking-[0.06em] uppercase leading-tight">
+                  Found Visibility Gap
+                </span>
+                <span className="text-[8px] font-mono text-black/45 mt-1.5 uppercase">
+                  Checking docs...
+                </span>
+              </div>
+
+              {/* Fixed gap by opening PR box */}
+              <div 
+                className="absolute flex flex-col items-center justify-center p-3 bg-white border border-black/15 shadow-sm text-center z-10"
+                style={{ 
+                  left: '1010px', 
+                  top: '150px', 
+                  width: '130px', 
+                  height: '80px',
+                  boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.01), 0 2px 8px rgba(0, 0, 0, 0.02)'
+                }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-black/80 mb-2" />
+                <span className="text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-tight">
+                  PR Merged
+                </span>
+                <span className="text-[8px] font-mono text-black/45 mt-1.5 uppercase">
+                  Resolved
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Mobile View fallback (Grid list) */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:hidden">
+            {[
+              { surface: 'cursor' as const, label: 'Cursor' },
+              { surface: 'claude' as const, label: 'Claude Code' },
+              { surface: 'chatgpt' as const, label: 'ChatGPT' },
+              { surface: 'perplexity' as const, label: 'Perplexity' },
+              { surface: 'gemini' as const, label: 'Gemini Pro' },
+            ].map((agent, i) => (
+              <div key={i} className="p-4 border border-black/[0.05] bg-white flex items-center gap-3">
+                <SurfaceIcon surface={agent.surface} className="w-4 h-4 text-black/60" />
+                <span className="text-[11px] font-semibold font-mono text-black/70">{agent.label}</span>
+              </div>
+            ))}
+            <div className="p-4 border border-dashed border-black/15 bg-white flex items-center gap-3">
+              <span className="text-[12px] font-bold text-black/45">+</span>
+              <span className="text-[11px] font-semibold font-mono text-black/50">More</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ Supported Surfaces — Platforms Integrations ═══ */}
 
       <section className="max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
-        <div className="flex flex-col gap-6 lg:gap-0 lg:justify-between lg:h-full lg:py-0 text-left">
-          <div className="space-y-5">
+        <div className="flex flex-col lg:h-full lg:justify-between text-left lg:py-0">
+          <div className="space-y-4">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
               <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
               <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
-                Generative Engine Optimization
+                AI Discovery
               </span>
             </div>
             <h2
               className="text-3xl sm:text-[42px] font-normal tracking-[-0.025em] leading-[1.1]"
               style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
             >
-              Where search clicks end, AI recommendations begin.
+              Where developers search now.
             </h2>
           </div>
           <p
-            className="text-[14px] leading-relaxed max-w-md font-sans"
+            className="text-[14px] leading-relaxed max-w-md font-sans py-4 lg:py-0"
             style={{ color: 'rgba(0,0,0,0.50)' }}
           >
-            Developers write queries directly in Claude Code or Cursor. If your documentation or MCP endpoints aren&apos;t optimized, you do not exist in the output buffer.
+            Developers find products directly inside AI tools. If your documentation is missing or outdated, models will recommend a competitor instead.
           </p>
+          <div className="pt-2 lg:pt-0">
+            <CtaButton size="md">Get started</CtaButton>
+          </div>
         </div>
 
         {/* Research Report Metrics */}
         <div className="grid grid-cols-2 gap-px" style={{ background: 'rgba(0,0,0,0.06)', overflow: 'hidden' }}>
           <div className="p-7 space-y-1.5" style={{ background: '#ffffff' }}>
-            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#e8662a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>82%</div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>IDE Agent Share</div>
-            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Developers using AI agents inside editors daily.</p>
+            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#e8662a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>70%</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>TRAFFIC SHIFT</div>
+            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Of developer search traffic is rapidly shifting away from search engines to AI assistants.</p>
           </div>
           <div className="p-7 space-y-1.5" style={{ background: '#ffffff' }}>
-            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>3.2x</div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>Discovery Lift</div>
-            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Increase in organic mentions when /llms.txt is initialized.</p>
+            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>84%</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>AGENT DEPENDENCY</div>
+            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Of AI coding agents rely exclusively on public documentation and llms.txt to select libraries.</p>
           </div>
           <div className="p-7 space-y-1.5" style={{ background: '#ffffff' }}>
-            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>&lt; 3.0s</div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>Latency Budget</div>
-            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Maximum fetch delay before agents ignore repository registry schemas.</p>
+            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>+120%</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>RECOMMENDATION LIFT</div>
+            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Average increase in organic brand recommendations within AI coding responses after optimization.</p>
           </div>
           <div className="p-7 space-y-1.5" style={{ background: '#ffffff' }}>
-            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>0%</div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>Organic Cookies</div>
-            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Mentions determined entirely by documentation context matching.</p>
+            <div className="text-[44px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em', lineHeight: 1 }}>&lt; 60s</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.08em]" style={{ color: 'rgba(0,0,0,0.40)' }}>DECISION WINDOW</div>
+            <p className="text-[11px] leading-snug font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Time it takes a developer to adopt a tool when recommended directly inside their IDE assistant.</p>
           </div>
         </div>
       </section>
@@ -440,14 +705,14 @@ return (
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
             <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
             <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
-              Signal Architecture
+              How it works
             </span>
           </div>
           <h2
             className="text-3xl sm:text-[42px] font-normal tracking-[-0.025em] leading-[1.1]"
             style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
           >
-            From data to visibility growth.
+            Turn insights into recommendations.
           </h2>
         </div>
 
@@ -460,14 +725,14 @@ return (
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
             <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
             <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
-              Pricing Schemas
+              Pricing
             </span>
           </div>
           <h2
             className="text-3xl sm:text-[42px] font-normal tracking-[-0.025em]"
             style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
           >
-            Simple, transparent pricing.
+            Scale your recommendations.
           </h2>
         </div>
 
@@ -480,7 +745,7 @@ return (
             <div className="space-y-5">
               <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Starter</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>See how AI agents recommend your product.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Track your AI recommendations.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
                 <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$99</span>
@@ -492,25 +757,25 @@ return (
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>75 prompts / month</span>
+                    <span>75 simulated prompts</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Coding Agents included</span>
+                    <span>Weekly tracking</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Weekly run frequency</span>
+                    <span>Competitor alerts</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>AI Judge scoring</span>
+                    <span>Scorecard report</span>
                   </li>
                 </ul>
               </div>
@@ -540,7 +805,7 @@ return (
             <div className="space-y-5">
               <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Growth</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Understand why competitors win and generate fixes.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Generate fixes to beat competitors.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
                 <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$299</span>
@@ -552,31 +817,31 @@ return (
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>300 prompts / month</span>
+                    <span>300 simulated prompts</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Bi-weekly run frequency</span>
+                    <span>Daily tracking</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Recommendation Replay</span>
+                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Competitor replays</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Action Engine (GitHub PRs)</span>
+                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Automated pull requests</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Slack & Discord workflows</span>
+                    <span>Slack notifications</span>
                   </li>
                 </ul>
               </div>
@@ -599,7 +864,7 @@ return (
             <div className="space-y-5">
               <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Scale</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Continuously improve recommendation share.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Automate your visibility growth.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
                 <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$1,499</span>
@@ -611,31 +876,31 @@ return (
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>1,000 prompts / month</span>
+                    <span>1,000 simulated prompts</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Daily / On-Demand frequency</span>
+                    <span>On-demand runs</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Unlimited repos & competitors</span>
+                    <span>Unlimited repositories</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Action Engine autopilot</span>
+                    <span>Autopilot pull requests</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>1-on-1 engineer Slack support</span>
+                    <span>Dedicated support channel</span>
                   </li>
                 </ul>
               </div>
@@ -659,7 +924,7 @@ return (
             <div className="space-y-5">
               <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Enterprise</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Custom models, security, and dedicated support.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Dedicated security and scale.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
                 <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>Custom</span>
@@ -670,31 +935,31 @@ return (
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Custom models & limits</span>
+                    <span>Custom model limits</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Self-hosted sandboxes</span>
+                    <span>Self-hosted environment</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Continuous Training Loop</span>
+                    <span>Continuous model learning</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Jira, Linear & GitLab integrations</span>
+                    <span>Custom integrations</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>SLA-backed support team</span>
+                    <span>Dedicated SLA support</span>
                   </li>
                 </ul>
               </div>
@@ -714,7 +979,7 @@ return (
         </div>
 
         <p className="text-[10px] text-center font-sans" style={{ color: 'rgba(0,0,0,0.40)' }}>
-          Secured via Dodo Payments. Cancel anytime.
+          Prompt volumes and run cadence per tier reflect launch packaging.
         </p>
       </section>
 
@@ -728,20 +993,20 @@ return (
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
                 <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
                 <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
-                  System FAQ
+                  FAQ
                 </span>
               </div>
               <h2
                 className="text-3xl sm:text-[40px] font-normal tracking-[-0.025em] leading-[1.15]"
                 style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
               >
-                Frequently asked questions.
+                Common questions.
               </h2>
             </div>
             
             <div className="pt-8 lg:pt-0">
               <p className="text-[13px] text-black/40 font-sans max-w-sm leading-relaxed">
-                Have other technical inquiries about AI indexing or sandboxed evaluations? Reach out to our team at{" "}
+                Need custom help optimizing your AI recommendations? Contact us at{" "}
                 <a href="mailto:team@tryorigin.ai" className="text-black/60 hover:text-black font-semibold underline decoration-black/20 underline-offset-4">
                   team@tryorigin.ai
                 </a>.
@@ -776,13 +1041,13 @@ return (
             className="text-3xl sm:text-[48px] font-normal tracking-[-0.03em] leading-[1.1]"
             style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.05em' }}
           >
-            Start building your AI visibility.
+            Start winning recommendations.
           </h2>
           <p
             className="text-[15px] max-w-md mx-auto leading-relaxed font-sans"
             style={{ color: 'rgba(0,0,0,0.50)' }}
           >
-            Join companies securing their recommendation share across AI coding agents and search surfaces.
+            Generate pull requests today to win recommendations across every AI agent.
           </p>
           <div className="flex items-center justify-center gap-4 pt-2">
             <CtaButton
@@ -803,7 +1068,7 @@ return (
         <VisibilityGraph variant="subtle" />
       </div>
 
-      <div className="relative z-10 max-w-[1280px] w-full mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-6 gap-8 text-left">
+      <div className="relative z-10 max-w-[1280px] w-full mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-16 grid grid-cols-2 md:grid-cols-6 gap-8 text-left">
         <div className="col-span-2 space-y-4">
           <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity duration-200">
             <img
@@ -815,7 +1080,7 @@ return (
             <span className="font-semibold text-sm tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}>origin</span>
           </Link>
           <p className="text-[12px] leading-relaxed max-w-[240px] font-sans" style={{ color: 'rgba(0,0,0,0.40)' }}>
-            The AI Discoverability Engine for developer tool companies.
+            Win the AI recommendation.
           </p>
         </div>
 
@@ -859,7 +1124,7 @@ return (
           className="col-span-2 md:col-span-6 pt-8 border-t text-[10px] text-center leading-relaxed font-sans"
           style={{ borderColor: 'rgba(0,0,0,0.05)', color: 'rgba(0,0,0,0.40)' }}
         >
-          Origin &copy; {new Date().getFullYear()} &middot; AI Discoverability OS for Dev Tools. Powered by Dodo Payments.
+          Origin &copy; {new Date().getFullYear()} &middot; AI Discoverability OS for Dev Tools.
         </div>
       </div>
     </footer>

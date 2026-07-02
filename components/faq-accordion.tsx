@@ -10,24 +10,24 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "What is generative engine optimization (GEO)?",
+    question: "How does AI discovery work?",
     answer:
-      "Just like SEO optimized your website for Google search crawlers, GEO optimizes your codebase, registries, and documentation to be parsed, understood, and recommended by AI assistants (like ChatGPT, Claude Code, Cursor, and Perplexity).",
+      "AI tools recommend products by parsing registries and documentation. Origin ensures your company's data is formatted so coding agents recommend you first.",
   },
   {
-    question: "How do the AI coding agent simulations work?",
+    question: "How does Origin test recommendations?",
     answer:
-      "We spin up headless developer sandboxes running Cursor and Claude Code. We simulate developer tasks (e.g. \"set up a headless browser proxy\") and inspect whether the AI agent recommends your SDK or your competitors', diagnosing the root cause in real-time.",
+      "We run automated queries across tools like Cursor and Claude. This measures how often you are recommended and detects why you lost to a competitor.",
   },
   {
-    question: "What is a /llms.txt file?",
+    question: "What is an llms.txt file?",
     answer:
-      "It is a machine-readable documentation index located at your root domain. It summarizes your API features and maps code snippets, making it trivial for LLMs to index your entire tool chain in seconds without consuming token context budgets.",
+      "It is a standard text file that structures your website documentation. This allows LLMs to easily read your capabilities and recommend your tool.",
   },
   {
-    question: "Do you automatically open pull requests?",
+    question: "How are fixes applied?",
     answer:
-      "Yes. Our Action Engine constructs documentation optimizations and proposes them as ready-to-review GitHub pull requests. You have complete human-in-the-loop control to review, edit, and approve them before they are proposed.",
+      "Origin creates automated pull requests with documentation fixes. Your team can review, edit, and merge them directly in GitHub or Slack.",
   },
 ];
 

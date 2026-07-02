@@ -10,7 +10,7 @@ interface CtaButtonProps {
 }
 
 export function CtaButton({
-  href = "/checkout",
+  href = "https://calendly.com/team-origin",
   className = "",
   size = "md",
   variant = "primary",

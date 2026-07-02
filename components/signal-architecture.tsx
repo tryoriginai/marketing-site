@@ -26,52 +26,52 @@ type Step = {
 const STEPS: Step[] = [
   { 
     id: 0, 
-    label: 'Company Data', 
-    desc: 'Codebase, docs, registries', 
+    label: 'Ingest Codebase', 
+    desc: 'Scan documentation and registries.', 
     icon: Database,
-    title: "SOURCE INGESTION & PARSING"
+    title: "SOURCE SCANNING"
   },
   { 
     id: 1, 
-    label: 'AI Analysis', 
-    desc: 'Multi-model prompt simulation', 
+    label: 'Simulate Prompts', 
+    desc: 'Run queries across top coding models.', 
     icon: Cpu,
-    title: "PROMPT INFERENCE ENGINE"
+    title: "PROMPT SIMULATION"
   },
   { 
     id: 2, 
-    label: 'Visibility Mapping', 
-    desc: 'Recommendation graph construction', 
+    label: 'Track Rankings', 
+    desc: 'Map your recommendation share.', 
     icon: Network,
-    title: "ROUTING GRAPH GENERATOR"
+    title: "VISIBILITY MAPPING"
   },
   { 
     id: 3, 
-    label: 'Gap Detection', 
-    desc: 'Missing connections identified', 
+    label: 'Detect Gaps', 
+    desc: 'Pinpoint exactly why competitors win.', 
     icon: Search,
-    title: "DIAGNOSTIC ENGINE"
+    title: "GAP ANALYSIS"
   },
   { 
     id: 4, 
-    label: 'Recommendations', 
-    desc: 'Prioritized optimization plan', 
+    label: 'Generate Changes', 
+    desc: 'Create missing documentation and schemas.', 
     icon: Lightbulb,
-    title: "ACTION ENGINE RECOMMENDATIONS"
+    title: "OPTIMIZATION GENERATION"
   },
   { 
     id: 5, 
-    label: 'Pull Request', 
-    desc: 'Auto-generated documentation PRs', 
+    label: 'Review Pull Requests', 
+    desc: 'Approve documentation fixes automatically.', 
     icon: GitPullRequest,
-    title: "ACTION ENGINES // AUTOPILOT PR"
+    title: "PULL REQUESTS"
   },
   { 
     id: 6, 
-    label: 'Visibility Growth', 
-    desc: 'Increased recommendation share', 
+    label: 'Grow Recommendations', 
+    desc: 'Increase developer recommendation share.', 
     icon: TrendingUp,
-    title: "PERFORMANCE METRICS"
+    title: "RECOMMENDATION GROWTH"
   },
 ];
 
