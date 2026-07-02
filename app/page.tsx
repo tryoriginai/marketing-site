@@ -648,31 +648,23 @@ export default function Home() {
                   boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.01), 0 2px 8px rgba(0, 0, 0, 0.02)'
                 }}
               >
-                {/* Heading Text Crossfade container */}
-                <div className="relative w-full h-[12px] flex items-center justify-center mb-1">
-                  <span className={`absolute text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-none transition-all duration-500 ${alertIconIndex === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                    Opening PR
-                  </span>
-                  <span className={`absolute text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-none transition-all duration-500 ${alertIconIndex === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                    Waiting for approval
-                  </span>
-                  <span className={`absolute text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-none transition-all duration-500 ${alertIconIndex === 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                    PR is merged
-                  </span>
-                </div>
-
-                {/* Sub-heading Text Crossfade container */}
-                <div className="relative w-full h-[10px] flex items-center justify-center mt-1">
-                  <span className={`absolute text-[7.5px] font-mono text-black/45 uppercase transition-all duration-500 ${alertIconIndex === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    Running checks
-                  </span>
-                  <span className={`absolute text-[7.5px] font-mono text-black/45 uppercase transition-all duration-500 ${alertIconIndex === 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    Pending review
-                  </span>
-                  <span className={`absolute text-[7.5px] font-mono text-black/45 uppercase transition-all duration-500 ${alertIconIndex === 2 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    Resolved
-                  </span>
-                </div>
+                <span className="text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-tight min-h-[14px] flex items-center justify-center">
+                  {alertIconIndex === 0 && "Opening PR"}
+                  {alertIconIndex === 1 && "Waiting for approval"}
+                  {alertIconIndex === 2 && (
+                    <span className="flex items-center gap-1.5 justify-center">
+                      <span>PR is merged</span>
+                      <svg className="w-2.5 h-2.5 text-[#e8662a] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </span>
+                  )}
+                </span>
+                <span className="text-[7.5px] font-mono text-black/45 mt-1.5 uppercase min-h-[10px] flex items-center justify-center">
+                  {alertIconIndex === 0 && "Running checks"}
+                  {alertIconIndex === 1 && "Pending review"}
+                  {alertIconIndex === 2 && "Resolved"}
+                </span>
               </div>
 
             </div>
