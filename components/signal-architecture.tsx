@@ -11,15 +11,14 @@ import {
   TrendingUp,
   Play,
   Pause,
-  ChevronRight,
-  ArrowRight
+  ChevronRight
 } from "lucide-react";
 
 type Step = {
   id: number;
   label: string;
   desc: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
 };
 
@@ -115,7 +114,7 @@ export function SignalArchitecture() {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <span className="text-[10px] font-semibold uppercase tracking-[0.12em] font-mono text-[rgba(0,0,0,0.35)]">
-                // ROUTING WORKFLOW
+                {"// ROUTING WORKFLOW"}
               </span>
               <button
                 onClick={() => setIsPlaying(!isPlaying)}

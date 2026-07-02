@@ -21,7 +21,7 @@ type Step = {
   title: string;
   subtitle: string;
   status: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   tabId: string;
 };
 
@@ -159,12 +159,28 @@ export function ExplainerMockup() {
   const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
   const panelRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  const handleMergeAction = () => {
+    setPrStatus("merging");
+    setTimeout(() => {
+      setPrStatus("merged");
+      setTimeout(() => {
+        setActiveStep(4);
+        setPrStatus("draft");
+      }, 1000);
+    }, 1200);
+  };
+
   useEffect(() => {
-    setSubPhase("sidebar");
+    const r = requestAnimationFrame(() => {
+      setSubPhase("sidebar");
+    });
     const subPhaseTimeout = setTimeout(() => {
       setSubPhase("main");
     }, 1200);
-    return () => clearTimeout(subPhaseTimeout);
+    return () => {
+      cancelAnimationFrame(r);
+      clearTimeout(subPhaseTimeout);
+    };
   }, [activeStep]);
 
   useEffect(() => {
@@ -251,7 +267,7 @@ export function ExplainerMockup() {
     return () => cancelAnimationFrame(frameId);
   }, [activeStep, subPhase]);
 
-  const renderTabButton = (tab: { id: string; label: string; icon: any; stepId: number }) => {
+  const renderTabButton = (tab: { id: string; label: string; icon: React.ComponentType<{ className?: string }>; stepId: number }) => {
     const IconComponent = tab.icon;
     const isStepTab = tab.stepId !== -1;
     const isActive = isStepTab && activeStep === tab.stepId;
@@ -282,8 +298,10 @@ export function ExplainerMockup() {
 
   useEffect(() => {
     if (activeStep !== 0) {
-      setTypedPrompt("");
-      return;
+      const r = requestAnimationFrame(() => {
+        setTypedPrompt("");
+      });
+      return () => cancelAnimationFrame(r);
     }
     
     const fullPrompt = "Recommend a secure node-based browser automation framework with stealth capability...";
@@ -299,41 +317,46 @@ export function ExplainerMockup() {
   }, [activeStep]);
 
   useEffect(() => {
-    if (activeStep === 0) {
-      setTerminalLogs([
-        "initializing headless probe on [coding_agents]",
-        "targeting cursor-gpt-4o & claude-3-5-sonnet...",
-        "running simulated query intent #832791..."
-      ]);
-    } else if (activeStep === 1) {
-      setTerminalLogs([
-        "probe query executed successfully",
-        "extracting recommendee credentials...",
-        "calculating win shares & sentiment scores...",
-        "discoverability index score finalized"
-      ]);
-    } else if (activeStep === 2) {
-      setTerminalLogs([
-        "identifying missing index surfaces...",
-        "crawling mcp directory matching schemas...",
-        "indexing gap: missing /llms.txt spec file",
-        "indexing gap: stale quickstart docs"
-      ]);
-    } else if (activeStep === 3) {
-      setTerminalLogs([
-        "initializing action autopilot...",
-        "generating git branch ref/origin-optimizer-12",
-        "writing mcp setup configurations and llms.txt index...",
-        "opening pull request on client repository..."
-      ]);
-    } else {
-      setTerminalLogs([
-        "PR #149 verified & merged dynamically",
-        "rescheduling headless probe...",
-        "re-indexing verification: discoverability share normalized at 88%",
-        "Origin active [loop count: 92]"
-      ]);
-    }
+    const handleLogsUpdate = () => {
+      if (activeStep === 0) {
+        setTerminalLogs([
+          "initializing headless probe on [coding_agents]",
+          "targeting cursor-gpt-4o & claude-3-5-sonnet...",
+          "running simulated query intent #832791..."
+        ]);
+      } else if (activeStep === 1) {
+        setTerminalLogs([
+          "probe query executed successfully",
+          "extracting recommendee credentials...",
+          "calculating win shares & sentiment scores...",
+          "discoverability index score finalized"
+        ]);
+      } else if (activeStep === 2) {
+        setTerminalLogs([
+          "identifying missing index surfaces...",
+          "crawling mcp directory matching schemas...",
+          "indexing gap: missing /llms.txt spec file",
+          "indexing gap: stale quickstart docs"
+        ]);
+      } else if (activeStep === 3) {
+        setTerminalLogs([
+          "initializing action autopilot...",
+          "generating git branch ref/origin-optimizer-12",
+          "writing mcp setup configurations and llms.txt index...",
+          "opening pull request on client repository..."
+        ]);
+      } else {
+        setTerminalLogs([
+          "PR #149 verified & merged dynamically",
+          "rescheduling headless probe...",
+          "re-indexing verification: discoverability share normalized at 88%",
+          "Origin active [loop count: 92]"
+        ]);
+      }
+    };
+
+    const r = requestAnimationFrame(handleLogsUpdate);
+    return () => cancelAnimationFrame(r);
   }, [activeStep]);
 
   useEffect(() => {
@@ -356,16 +379,7 @@ export function ExplainerMockup() {
     setIsPaused(true);
   };
 
-  const handleMergeAction = () => {
-    setPrStatus("merging");
-    setTimeout(() => {
-      setPrStatus("merged");
-      setTimeout(() => {
-        setActiveStep(4);
-        setPrStatus("draft");
-      }, 1000);
-    }, 1200);
-  };
+
 
   return (
     <div className="w-full max-w-[1280px] mx-auto px-6 select-none" style={{ paddingBottom: '120px' }}>

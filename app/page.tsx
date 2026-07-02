@@ -317,7 +317,7 @@ export default function Home() {
             <div
               className="text-[9px] font-mono pt-4 border-t transition-colors duration-300 text-black/35 border-black/[0.04] group-hover:text-black/50"
             >
-              // Coding Agents / AI Search / Chat
+              {"// Coding Agents / AI Search / Chat"}
             </div>
           </div>
 
@@ -370,7 +370,7 @@ export default function Home() {
             <div
               className="text-[9px] font-mono pt-4 border-t transition-colors duration-300 text-black/35 border-black/[0.04] group-hover:text-black/50"
             >
-              // Registries / Packages / Directories
+              {"// Registries / Packages / Directories"}
             </div>
           </div>
 
@@ -420,7 +420,7 @@ export default function Home() {
             <div
               className="text-[9px] font-mono pt-4 border-t transition-colors duration-300 text-black/35 border-black/[0.04] group-hover:text-black/50"
             >
-              // GitHub / Documentation / llms.txt
+              {"// GitHub / Documentation / llms.txt"}
             </div>
           </div>
         </div>
