@@ -613,9 +613,12 @@ export default function Home() {
                     <FaDiscord className="w-5 h-5 text-[#5865F2]" />
                   </div>
                   <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 2 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
-                    <div className="w-5 h-5 flex items-center justify-center border border-black/15 bg-black/[0.03]" style={{ borderRadius: '4px' }}>
-                      <span className="text-[10px] font-sans font-black tracking-tighter text-black select-none leading-none -translate-y-[0.5px]">o</span>
-                    </div>
+                    <img
+                      src="/logo.svg"
+                      alt="Origin Logo"
+                      className="w-5 h-5 object-contain"
+                      style={{ filter: 'invert(1)' }}
+                    />
                   </div>
                   {/* Notification Dot Badge */}
                   <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#ff4d4f] animate-pulse" />
