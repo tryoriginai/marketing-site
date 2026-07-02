@@ -608,16 +608,11 @@ export default function Home() {
               >
                 <div className="relative w-5 h-5 mb-2 flex items-center justify-center">
                   <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 0 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
-                    <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-                      <path d="M5.04 15.17a2.52 2.52 0 1 0-2.52 2.52h2.52v-2.52z" fill="#36C5F0"/>
-                      <path d="M6.3 15.17a2.52 2.52 0 0 0 2.52 2.52h5.04a2.52 2.52 0 0 0 2.52-2.52v-5.04a2.52 2.52 0 0 0-2.52-2.52H8.82a2.52 2.52 0 0 0-2.52 2.52v5.04z" fill="#36C5F0"/>
-                      <path d="M8.82 5.04a2.52 2.52 0 1 0 2.52-2.52v2.52H8.82z" fill="#2EB67D"/>
-                      <path d="M8.82 6.3a2.52 2.52 0 0 0-2.52 2.52v5.04a2.52 2.52 0 0 0 2.52 2.52h5.04a2.52 2.52 0 0 0 2.52-2.52V8.82a2.52 2.52 0 0 0-2.52-2.52H8.82z" fill="#2EB67D"/>
-                      <path d="M18.96 8.82a2.52 2.52 0 1 0 2.52-2.52h-2.52v2.52z" fill="#ECB22E"/>
-                      <path d="M17.7 8.82a2.52 2.52 0 0 0-2.52-2.52h-5.04a2.52 2.52 0 0 0-2.52 2.52v5.04a2.52 2.52 0 0 0 2.52 2.52h5.04a2.52 2.52 0 0 0 2.52-2.52V8.82z" fill="#ECB22E"/>
-                      <path d="M15.16 18.96a2.52 2.52 0 1 0-2.52 2.52v-2.52h2.52z" fill="#E01E5A"/>
-                      <path d="M15.16 17.7a2.52 2.52 0 0 0 2.52-2.52v-5.04a2.52 2.52 0 0 0-2.52-2.52h-5.04a2.52 2.52 0 0 0-2.52 2.52v5.04a2.52 2.52 0 0 0 2.52 2.52h5.04z" fill="#E01E5A"/>
-                    </svg>
+                    <img 
+                      src="https://cdn-icons-png.flaticon.com/128/3800/3800024.png"
+                      alt="Slack Icon"
+                      className="w-5 h-5 object-contain"
+                    />
                   </div>
                   <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 1 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
                     <FaDiscord className="w-5 h-5 text-[#5865F2]" />
