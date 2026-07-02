@@ -624,7 +624,7 @@ export default function Home() {
                   <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#ff4d4f] animate-pulse" />
                 </div>
                 <span className="text-[9px] font-bold font-sans text-[#ff4d4f] tracking-[0.06em] uppercase leading-tight">
-                  Found Visibility Gap
+                  12 Visibility Gaps Found
                 </span>
               </div>
 
