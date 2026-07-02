@@ -192,6 +192,26 @@ body {
   animation: dash 0.8s linear infinite;
 }
 
+/* Integrations diagram: scale-to-fit without horizontal scroll */
+.scale-diagram-wrapper {
+  container-type: inline-size;
+  overflow: hidden;
+  width: 100%;
+}
+
+.scale-diagram {
+  transform-origin: top left;
+  transform: scale(calc(100cqw / 1180px));
+}
+
+/* Adjusted wrapper height = 380px * scale ratio */
+@container (max-width: 1179px) {
+  .scale-diagram-wrapper {
+    height: calc(380px * (100cqw / 1180px));
+  }
+}
+
+
 @keyframes subtleDrift {
   0%, 100% { transform: translate(0, 0); }
   33% { transform: translate(1px, -2px); }

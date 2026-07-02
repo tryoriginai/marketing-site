@@ -438,10 +438,12 @@ export default function Home() {
           {/* Subtle Background Dot Grid */}
           <div className="absolute inset-0 dot-grid-light opacity-50 pointer-events-none" />
           
-          {/* Desktop View: Curved Branching Diagram */}
-          <div className="hidden md:block overflow-x-auto relative">
-            <div className="relative w-[1180px] h-[380px] mx-auto">
-              
+          {/* Desktop View: Curved Branching Diagram — lg+ only, no horizontal scroll */}
+          <div className="hidden lg:block scale-diagram-wrapper">
+            <div
+              style={{ width: '1180px' }}
+              className="relative h-[380px] scale-diagram"
+            >
               {/* Radial glow cores */}
               <div 
                 className="absolute w-64 h-64 rounded-full bg-[#e8662a]/[0.025] blur-3xl pointer-events-none"
@@ -623,8 +625,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile View fallback (Grid list) */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:hidden">
+          {/* Mobile/Tablet View fallback (Grid list) — shown below lg */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:hidden">
             {[
               { surface: 'cursor' as const, label: 'Cursor' },
               { surface: 'claude' as const, label: 'Claude Code' },
