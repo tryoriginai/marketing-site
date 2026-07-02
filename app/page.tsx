@@ -726,7 +726,7 @@ export default function Home() {
       </section>
 
       <section id="pricing" className="max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 space-y-16">
-        <div className="text-center space-y-4">
+        <div className="space-y-4">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
             <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
             <span className="text-[9px] font-semibold font-sans uppercase tracking-[0.08em] text-black/60 leading-none">
