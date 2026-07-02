@@ -9,6 +9,7 @@ import { CtaButton } from "@/components/cta-button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SurfaceIcon } from "@/components/surface-icon";
 import { FaDiscord } from "react-icons/fa6";
+import { GoGitPullRequest, GoClock, GoGitMerge } from "react-icons/go";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -648,6 +649,17 @@ export default function Home() {
                   boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.01), 0 2px 8px rgba(0, 0, 0, 0.02)'
                 }}
               >
+                <div className="relative w-5 h-5 mb-2 flex items-center justify-center">
+                  <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 0 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
+                    <GoGitPullRequest className="w-4 h-4 text-black/60" />
+                  </div>
+                  <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 1 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
+                    <GoClock className="w-4 h-4 text-[#ECB22E]" />
+                  </div>
+                  <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 2 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
+                    <GoGitMerge className="w-4 h-4 text-[#8250DF]" />
+                  </div>
+                </div>
                 <span className="text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-tight min-h-[14px] flex items-center justify-center">
                   {alertIconIndex === 0 && "Opening PR"}
                   {alertIconIndex === 1 && "Waiting for approval"}
