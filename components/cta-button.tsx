@@ -15,7 +15,7 @@ export function CtaButton({
   size = "md",
   variant = "primary",
   showDot = true,
-  children = "Book a demo",
+  children = "Get a Demo",
 }: CtaButtonProps) {
   const sizeClasses = {
     sm: "text-[13px] px-4 py-2 gap-2",

@@ -219,12 +219,9 @@ export function SignalArchitecture() {
               {activeStep === 0 && (
                 <div className="space-y-3">
                   <div className="text-[rgba(0,0,0,0.4)]">{'// Scanning codebase, docs directories and package registries'}</div>
-                  <div className="flex items-center gap-1.5 text-[#e8662a] font-bold">
-                    <span className="shrink-0">$</span>
-                    <span>origin scan --path=./better-found</span>
-                  </div>
+
                   <div className="border border-[rgba(0,0,0,0.05)] bg-[rgba(0,0,0,0.01)] p-4 space-y-1.5 text-[11px] leading-snug">
-                    <div>better-found/</div>
+                    <div>your-app/</div>
                     <div>├── app/</div>
                     <div className="pl-4 text-[rgba(0,0,0,0.4)]">├── page.tsx <span className="text-[rgba(0,0,0,0.3)]">(1.2kb)</span></div>
                     <div className="pl-4 text-[rgba(0,0,0,0.4)]">└── layout.tsx <span className="text-[rgba(0,0,0,0.3)]">(0.8kb)</span></div>
@@ -244,10 +241,7 @@ export function SignalArchitecture() {
               {activeStep === 1 && (
                 <div className="space-y-3">
                   <div className="text-[rgba(0,0,0,0.4)]">{'// Simulating developer queries inside headless editor agents'}</div>
-                  <div className="flex items-center gap-1.5 text-[#e8662a] font-bold">
-                    <span className="shrink-0">$</span>
-                    <span>origin probe --engines=sonnet,gpt5,perplexity</span>
-                  </div>
+
                   <div className="space-y-2.5">
                     <div className="p-3 border border-[rgba(0,0,0,0.05)] bg-[rgba(0,0,0,0.01)] space-y-1">
                       <div className="flex justify-between text-[11px] border-b border-[rgba(0,0,0,0.04)] pb-1 mb-1">
@@ -315,10 +309,7 @@ export function SignalArchitecture() {
               {activeStep === 3 && (
                 <div className="space-y-3">
                   <div className="text-[rgba(0,0,0,0.4)]">{'// Analyzing documentation completeness & semantic index matching'}</div>
-                  <div className="flex items-center gap-1.5 text-[#e8662a] font-bold">
-                    <span className="shrink-0">$</span>
-                    <span>origin diagnose --format=brief</span>
-                  </div>
+
                   
                   <div className="space-y-2 text-[11px]">
                     <div className="p-3 border border-[rgba(0,0,0,0.05)] bg-[rgba(232,102,42,0.01)] border-l-2 border-l-[#e8662a] space-y-1">
