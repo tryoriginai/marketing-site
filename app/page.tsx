@@ -233,7 +233,7 @@ export default function Home() {
         </div>
 
       {/* ═══ Capabilities — System Modules ═══ */}
-      <section id="features" className="relative max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 space-y-20 overflow-hidden">
+      <section id="features" className="relative max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 space-y-20 overflow-hidden">
         <div className="fading-dot-grid" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-4">
@@ -417,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* ═══ Compatible Surfaces — Node network ═══ */}
-      <section className="relative max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 space-y-12 overflow-hidden">
+      <section className="relative max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 space-y-12 overflow-hidden">
         <div className="space-y-4">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
             <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
@@ -652,7 +652,7 @@ export default function Home() {
 
       {/* ═══ Supported Surfaces — Platforms Integrations ═══ */}
 
-      <section className="max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
+      <section className="max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
         <div className="flex flex-col lg:h-full lg:justify-between text-left lg:py-0">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
@@ -705,7 +705,7 @@ export default function Home() {
       </section>
 
       {/* ═══ How It Works — Signal Routing Diagram ═══ */}
-      <section className="max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 space-y-16">
+      <section className="max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 space-y-16">
         <div className="space-y-4 max-w-lg">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
             <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
@@ -725,7 +725,7 @@ export default function Home() {
         <SignalArchitecture />
       </section>
 
-      <section id="pricing" className="max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 space-y-16">
+      <section id="pricing" className="max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 space-y-16">
         <div className="space-y-4">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/[0.03] border border-black/[0.04] rounded-none select-none">
             <span className="w-1 h-1 rounded-full bg-[#e8662a] shrink-0" />
@@ -989,7 +989,7 @@ export default function Home() {
       </section>
 
       {/* ═══ FAQ ═══ */}
-      <section id="faq" className="relative max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 overflow-hidden">
+      <section id="faq" className="relative max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 overflow-hidden">
         <div className="fading-dot-grid" />
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-6 gap-12">
           {/* Left Column - Heading & Technical Inquiry */}
@@ -1026,7 +1026,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative max-w-[1280px] w-full mx-auto px-6 py-28 md:py-36 text-center overflow-hidden">
+      <section className="relative max-w-[1280px] w-full mx-auto px-6 py-20 md:py-28 text-center overflow-hidden">
         {/* Subtle connected graph background */}
         <div className="absolute inset-0 z-0 opacity-10">
           <VisibilityGraph variant="subtle" />
