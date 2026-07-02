@@ -8,14 +8,22 @@ import { SignalArchitecture } from "@/components/signal-architecture";
 import { CtaButton } from "@/components/cta-button";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { SurfaceIcon } from "@/components/surface-icon";
-import { FaSlack } from "react-icons/fa6";
+import { FaSlack, FaDiscord } from "react-icons/fa6";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [alertIconIndex, setAlertIconIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % 6);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAlertIconIndex((prev) => (prev + 1) % 3);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -597,7 +605,19 @@ export default function Home() {
                   boxShadow: 'inset 0 1px 1px rgba(0,0,0,0.01), 0 2px 8px rgba(255, 77, 79, 0.04)'
                 }}
               >
-                <FaSlack className="w-5 h-5 text-[#e01e5a] mb-2" />
+                <div className="relative w-5 h-5 mb-2 flex items-center justify-center">
+                  <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 0 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
+                    <FaSlack className="w-5 h-5 text-[#e01e5a]" />
+                  </div>
+                  <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 1 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
+                    <FaDiscord className="w-5 h-5 text-[#5865F2]" />
+                  </div>
+                  <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 2 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
+                    <div className="w-5 h-5 flex items-center justify-center border border-[#e8662a]/25 bg-[#e8662a]/[0.05]" style={{ borderRadius: '4px' }}>
+                      <span className="text-[10px] font-sans font-black tracking-tighter text-[#e8662a] select-none leading-none -translate-y-[0.5px]">o</span>
+                    </div>
+                  </div>
+                </div>
                 <span className="text-[9px] font-bold font-sans text-[#ff4d4f] tracking-[0.06em] uppercase leading-tight">
                   Found Visibility Gap
                 </span>
