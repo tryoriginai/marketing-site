@@ -192,15 +192,18 @@ body {
   animation: dash 0.8s linear infinite;
 }
 
-/* Integrations diagram: scale-to-fit without horizontal scroll */
+/* Integrations diagram: scale-to-fit without horizontal scroll, centered */
 .scale-diagram-wrapper {
   container-type: inline-size;
   overflow: hidden;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .scale-diagram {
-  transform-origin: top left;
+  flex-shrink: 0;
+  transform-origin: top center;
   transform: scale(calc(100cqw / 1180px));
 }
 
