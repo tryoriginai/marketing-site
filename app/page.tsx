@@ -646,31 +646,28 @@ export default function Home() {
               >
                 <div className="relative w-5 h-5 mb-2 flex items-center justify-center">
                   <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 0 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
-                    <GoGitPullRequest className="w-4 h-4 text-black/60" />
+                    <GoGitPullRequest className="w-4 h-4 text-[#e8662a]" />
                   </div>
                   <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 1 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
-                    <GoClock className="w-4 h-4 text-[#ECB22E]" />
+                    <GoClock className="w-4 h-4 text-[#e8662a]" />
                   </div>
                   <div className={`absolute transition-all duration-500 ease-in-out ${alertIconIndex === 2 ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-75 pointer-events-none'}`}>
-                    <GoGitMerge className="w-4 h-4 text-[#8250DF]" />
+                    <GoGitMerge className="w-4 h-4 text-[#e8662a]" />
                   </div>
                 </div>
                 <span className="text-[9px] font-bold font-sans text-black/80 tracking-[0.06em] uppercase leading-tight min-h-[14px] flex items-center justify-center">
                   {alertIconIndex === 0 && "Opening PR"}
                   {alertIconIndex === 1 && "Waiting for approval"}
-                  {alertIconIndex === 2 && (
-                    <span className="flex items-center gap-1.5 justify-center">
-                      <span>PR is merged</span>
-                      <svg className="w-2.5 h-2.5 text-[#e8662a] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </span>
-                  )}
+                  {alertIconIndex === 2 && "PR is merged"}
                 </span>
-                <span className="text-[7.5px] font-mono text-black/45 mt-1.5 uppercase min-h-[10px] flex items-center justify-center">
+                <span className="text-[7.5px] font-mono text-black/45 mt-1.5 uppercase min-h-[12px] flex items-center justify-center">
                   {alertIconIndex === 0 && "Running checks"}
                   {alertIconIndex === 1 && "Pending review"}
-                  {alertIconIndex === 2 && "Resolved"}
+                  {alertIconIndex === 2 && (
+                    <svg className="w-3 h-3 text-[#e8662a] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  )}
                 </span>
               </div>
 
