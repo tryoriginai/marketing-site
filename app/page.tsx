@@ -600,8 +600,8 @@ export default function Home() {
                 <span className="text-[9px] font-bold font-sans text-[#ff4d4f] tracking-[0.06em] uppercase leading-tight">
                   Found Visibility Gap
                 </span>
-                <span className="text-[8px] font-mono text-black/45 mt-1.5 uppercase flex items-center gap-1 justify-center">
-                  <svg className="w-2.5 h-2.5 shrink-0" viewBox="0 0 24 24" fill="none">
+                <span className="text-[8.5px] font-semibold font-mono text-black/60 mt-2 uppercase flex items-center gap-1.5 justify-center">
+                  <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none">
                     <path fill="#36C5F0" d="M5.04 15.17a2.52 2.52 0 1 1-2.52 2.52h2.52v-2.52zM6.3 15.17a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52H8.82a2.52 2.52 0 0 1-2.52-2.52v-5.04z" />
                     <path fill="#2EB67D" d="M8.82 5.04a2.52 2.52 0 1 1-2.52-2.52v2.52h2.52zM8.82 6.3a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52H3.78a2.52 2.52 0 0 1-2.52-2.52V8.82a2.52 2.52 0 0 1 2.52-2.52h5.04z" />
                     <path fill="#ECB22E" d="M18.96 8.82a2.52 2.52 0 1 1 2.52-2.52h-2.52v-2.52zM17.7 8.82a2.52 2.52 0 0 1-2.52 2.52h-5.04a2.52 2.52 0 0 1-2.52-2.52V3.78a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04z" />
