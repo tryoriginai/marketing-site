@@ -197,8 +197,8 @@ export default function Home() {
                 marginBottom: '24px',
               }}
             >
-              <span className="block whitespace-normal md:whitespace-nowrap">Win the AI Recommendation.</span>
-              <span className="block whitespace-normal md:whitespace-nowrap">Ship the fix, not a report.</span>
+              <span className="block whitespace-normal md:whitespace-nowrap">Win the AI Recommendation</span>
+              <span className="block whitespace-normal md:whitespace-nowrap">Ship the fix not a report</span>
             </h1>
 
             {/* Supporting Copy */}
