@@ -1,0 +1,39 @@
+# Origin Marketing Site
+
+> Origin is a developer platform that measures how coding agents and LLMs recommend your product, then automatically ships fixes (such as pull requests, documentation updates, and `llms.txt` optimizations) to win AI recommendation share.
+
+This repository contains the source code for the Origin marketing and landing website. It is built using Next.js 16 (App Router), React 19, TypeScript, and TailwindCSS v4. It features a technical, engineering-led neo-brutalist visual aesthetic.
+
+## Tech Stack & Architecture
+
+- **Core Framework**: Next.js 16 (App Router) & React 19
+- **Styling**: TailwindCSS v4 with CSS custom variables, custom typography, animations, and transitions managed in `globals.css`.
+- **Aesthetic Principles**: Strictly rectilinear (`0px` border-radius), monochrome bases with high-visibility engineering orange (`#e8662a`) accents, and CAD/blueprint-inspired fading grid backgrounds.
+- **Scroll & Interactions**: Lenis smooth scroll and GSAP (GreenSock Animation Platform) timeline/scroll animations.
+- **Icons**: Lucide React and React Icons.
+
+## Key Files
+
+- [package.json](file:///Users/aparupganguly/developer/origin-marketing-site/package.json): Root configuration containing the scripts (`dev`, `build`, `start`, `lint`) and dependencies.
+- [DESIGN_SYSTEM.md](file:///Users/aparupganguly/developer/origin-marketing-site/DESIGN_SYSTEM.md): The single source of truth for the Origin design language, specifying color tokens, typography scales, layout rules, component specifications, and main app migration guidelines.
+- [app/page.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/app/page.tsx): Main landing page featuring a CAD-blueprint grid layout, interactive odd/even column sweep hover effects, capability cards, and integrations section.
+- [app/globals.css](file:///Users/aparupganguly/developer/origin-marketing-site/app/globals.css): Global styles, custom CSS utilities, layout line grid animations, code diff highlighter theme, and monospace/grotesk font bindings.
+- [app/layout.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/app/layout.tsx): Root layout setting up custom metadata, viewport headers, and wrapping children with Geist fonts and smooth scrolling.
+
+## Components
+
+- [components/explainer-mockup.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/explainer-mockup.tsx): A simulated high-density dashboard mockup showcasing real-time opportunities, code diff visualizers, file system directories, and agent execution logs.
+- [components/signal-architecture.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/signal-architecture.tsx): Node-network diagram showing how GitHub codebases connect to models (Claude, Gemini, ChatGPT) and search engines.
+- [components/visibility-graph.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/visibility-graph.tsx): Custom SVG line chart plotting recommendation share metrics over time.
+- [components/cta-button.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/cta-button.tsx): Reusable button adhering to neo-brutalist aesthetics (custom orange indicator dot, translation animations).
+- [components/faq-accordion.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/faq-accordion.tsx): Expandable accordion grid component handling smooth height transitions for Q&A section.
+- [components/surface-icon.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/surface-icon.tsx): SVG wrapper displaying custom brand/platform logos (Cursor, Claude, Gemini, ChatGPT, Perplexity).
+- [components/smooth-scroll.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/smooth-scroll.tsx): React wrapper initializing Lenis scroll configuration.
+- [components/theme-init.tsx](file:///Users/aparupganguly/developer/origin-marketing-site/components/theme-init.tsx): Inline script checking and applying local/system dark mode classes.
+
+## Optional & Configuration
+
+- [tsconfig.json](file:///Users/aparupganguly/developer/origin-marketing-site/tsconfig.json): Compiler rules and absolute import aliases (`@/*`).
+- [next.config.ts](file:///Users/aparupganguly/developer/origin-marketing-site/next.config.ts): Next.js build-time configurations.
+- [eslint.config.mjs](file:///Users/aparupganguly/developer/origin-marketing-site/eslint.config.mjs): Static code linting configurations.
+- [postcss.config.mjs](file:///Users/aparupganguly/developer/origin-marketing-site/postcss.config.mjs): PostCSS build pipeline settings.
