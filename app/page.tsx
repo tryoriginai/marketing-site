@@ -787,7 +787,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* Starter */}
           <div
             className="p-6 space-y-6 flex flex-col justify-between relative overflow-hidden border"
@@ -796,7 +796,7 @@ export default function Home() {
             <div className="space-y-5">
               <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Starter</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Track your AI recommendations.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>For early-stage products getting started with AI discoverability.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
                 <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$99</span>
@@ -808,25 +808,63 @@ export default function Home() {
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>75 simulated prompts</span>
+                    <span>75 AI Prompts / month</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Weekly tracking</span>
+                    <span>
+                      3 <span className="underline decoration-dotted cursor-help decoration-black/25" title="Real coding agents completing developer tasks in isolated environments to measure which tools they actually select and use.">Verified Agent Runs</span> / month
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Competitor alerts</span>
+                    <span>Up to 2 competitors</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Scorecard report</span>
+                    <span>1 workspace</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Weekly monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Live Prompt Discovery</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>AI recommendation monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Coding agent monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Visibility dashboard</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Gap discovery</span>
                   </li>
                 </ul>
               </div>
@@ -842,7 +880,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Growth (Featured) */}
+          {/* Scale (Featured) */}
           <div
             className="p-6 space-y-6 flex flex-col justify-between relative overflow-hidden border"
             style={{ borderColor: 'rgba(0,0,0,0.15)', background: '#ffffff', borderRadius: '0px' }}
@@ -855,70 +893,11 @@ export default function Home() {
             </div>
             <div className="space-y-5">
               <div className="space-y-2">
-                <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Growth</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Generate fixes to beat competitors.</p>
-              </div>
-              <div className="flex items-baseline gap-1 py-1">
-                <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$299</span>
-                <span className="text-[12px]" style={{ color: 'rgba(0,0,0,0.40)' }}>/month</span>
-              </div>
-              <div className="pt-4 space-y-3 text-[12px] border-t" style={{ borderColor: 'rgba(0,0,0,0.04)' }}>
-                <ul className="space-y-2.5 font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span>300 simulated prompts</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span>Daily tracking</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Competitor replays</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Automated pull requests</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                    <span>Slack notifications</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="pt-4">
-              <CtaButton
-                href="/checkout?plan=growth"
-                variant="primary"
-                size="md"
-                className="w-full justify-center text-[12px]"
-              />
-            </div>
-          </div>
-
-          {/* Scale */}
-          <div
-            className="p-6 space-y-6 flex flex-col justify-between relative overflow-hidden border"
-            style={{ borderColor: 'rgba(0,0,0,0.05)', background: '#ffffff', borderRadius: '0px' }}
-          >
-            <div className="space-y-5">
-              <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Scale</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Automate your visibility growth.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>For developer tools actively improving how AI recommends their product.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
-                <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$1,499</span>
+                <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$999</span>
                 <span className="text-[12px]" style={{ color: 'rgba(0,0,0,0.40)' }}>/month</span>
               </div>
               <div className="pt-4 space-y-3 text-[12px] border-t" style={{ borderColor: 'rgba(0,0,0,0.04)' }}>
@@ -927,31 +906,93 @@ export default function Home() {
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>1,000 simulated prompts</span>
+                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Everything in Starter</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>On-demand runs</span>
+                    <span>800 AI Prompts / month</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Unlimited repositories</span>
+                    <span>
+                      30 <span className="underline decoration-dotted cursor-help decoration-black/25" title="Real coding agents completing developer tasks in isolated environments to measure which tools they actually select and use.">Verified Agent Runs</span> / month
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Autopilot pull requests</span>
+                    <span>Up to 10 competitors</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Dedicated support channel</span>
+                    <span>Up to 5 workspaces</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Daily monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Continuous Prompt Discovery</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Automated fix generation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>GitHub PR generation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Slack approvals and alerts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>On-demand replays</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Competitor movement tracking</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Historical visibility trends</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Recommendation lift measurement</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Priority processing</span>
                   </li>
                 </ul>
               </div>
@@ -959,8 +1000,7 @@ export default function Home() {
             <div className="pt-4">
               <CtaButton
                 href="/checkout?plan=scale"
-                variant="secondary"
-                showDot={false}
+                variant="primary"
                 size="md"
                 className="w-full justify-center text-[12px]"
               />
@@ -975,7 +1015,7 @@ export default function Home() {
             <div className="space-y-5">
               <div className="space-y-2">
                 <h3 className="text-lg font-bold" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif' }}>Enterprise</h3>
-                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>Dedicated security and scale.</p>
+                <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>For larger teams with custom AI discovery requirements.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
                 <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>Custom</span>
@@ -986,31 +1026,57 @@ export default function Home() {
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Custom model limits</span>
+                    <span className="font-semibold" style={{ color: '#0a0a0a' }}>Everything in Scale</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Self-hosted environment</span>
+                    <span>Custom AI Prompt volume</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Continuous model learning</span>
+                    <span>
+                      Custom <span className="underline decoration-dotted cursor-help decoration-black/25" title="Real coding agents completing developer tasks in isolated environments to measure which tools they actually select and use.">Verified Agent Runs</span>
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Custom integrations</span>
+                    <span>Custom competitor limits</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Dedicated SLA support</span>
+                    <span>Custom workspace limits</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Custom monitoring cadence</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Custom Prompt Discovery</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Custom LLM routing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span>Dedicated support</span>
                   </li>
                 </ul>
               </div>
@@ -1029,9 +1095,9 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="text-[10px] text-center font-sans" style={{ color: 'rgba(0,0,0,0.40)' }}>
-          Prompt volumes and run cadence per tier reflect launch packaging.
-        </p>
+        <div className="text-[10px] text-center font-sans space-y-1.5" style={{ color: 'rgba(0,0,0,0.40)' }}>
+          <p>Verified Agent Runs use real coding agents in isolated environments to measure which tools they actually select and use.</p>
+        </div>
       </section>
 
       {/* ═══ FAQ ═══ */}
