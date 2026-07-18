@@ -897,7 +897,7 @@ export default function Home() {
                 <p className="text-[12px] min-h-[32px] font-sans" style={{ color: 'rgba(0,0,0,0.50)' }}>For developer tools actively improving how AI recommends their product.</p>
               </div>
               <div className="flex items-baseline gap-1 py-1">
-                <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$999</span>
+                <span className="text-[38px] font-normal tracking-tight" style={{ color: '#0a0a0a', fontFamily: 'var(--font-schibsted-grotesk), system-ui, sans-serif', letterSpacing: '-0.04em' }}>$299</span>
                 <span className="text-[12px]" style={{ color: 'rgba(0,0,0,0.40)' }}>/month</span>
               </div>
               <div className="pt-4 space-y-3 text-[12px] border-t" style={{ borderColor: 'rgba(0,0,0,0.04)' }}>
@@ -912,27 +912,27 @@ export default function Home() {
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>800 AI Prompts / month</span>
+                    <span>150 AI Prompts / month</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     <span>
-                      30 <span className="underline decoration-dotted cursor-help decoration-black/25" title="Real coding agents completing developer tasks in isolated environments to measure which tools they actually select and use.">Verified Agent Runs</span> / month
+                      10 <span className="underline decoration-dotted cursor-help decoration-black/25" title="Real coding agents completing developer tasks in isolated environments to measure which tools they actually select and use.">Verified Agent Runs</span> / month
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Up to 10 competitors</span>
+                    <span>Up to 5 competitors</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>Up to 5 workspaces</span>
+                    <span>Up to 3 workspaces</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
