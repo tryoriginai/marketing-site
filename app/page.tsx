@@ -912,7 +912,7 @@ export default function Home() {
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
-                    <span>150 AI Prompts / month</span>
+                    <span>200 AI Prompts / month</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#e8662a' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
